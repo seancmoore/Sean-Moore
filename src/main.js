@@ -3,7 +3,7 @@ import "./style.css";
 import { projects, profile } from "./projects.js";
 
 // ==================================================================
-// Shaders — a noise-displaced sphere with recomputed normals,
+// Shaders: a noise-displaced sphere with recomputed normals,
 // fresnel rim light, and a two-color iridescent body.
 // ==================================================================
 const noiseGLSL = /* glsl */ `
@@ -177,7 +177,7 @@ const dust = new THREE.Points(
 scene.add(dust);
 
 // ==================================================================
-// Section state — drives blob color / offset / intensity on scroll
+// Section state: drives blob color / offset / intensity on scroll
 // ==================================================================
 const SECTIONS = {
   hero:    { colors: [lin("#3a5bd9"), lin("#a78bfa")], x: 0.0,  intensity: 0.32, scale: 1.18 },
@@ -241,7 +241,7 @@ projects.forEach((p, i) => {
           `<a href="${l.url}" target="_blank" rel="noopener"${idx > 0 ? ' class="ghost"' : ""}>${l.label}</a>`
         )
         .join("")
-    : `<p class="project-note">${p.placeholder ? "Nothing to show here yet." : "Private project — link available on request."}</p>`;
+    : `<p class="project-note">${p.placeholder ? "Nothing to show here yet." : "Private project. Link available on request."}</p>`;
 
   li.innerHTML = `
     <button class="project-head" aria-expanded="false">
@@ -293,7 +293,7 @@ document.querySelectorAll("[data-scroll]").forEach((b) => {
 });
 
 // ==================================================================
-// Scroll handling — fade sections in, pick the active one
+// Scroll handling: fade sections in, pick the active one
 // ==================================================================
 const sectionEls = [...document.querySelectorAll(".section")];
 const wraps = [...document.querySelectorAll(".wrap")];
@@ -325,7 +325,7 @@ function onScroll() {
 window.addEventListener("scroll", onScroll, { passive: true });
 
 // ==================================================================
-// Pointer — parallax tilt + a "wake" that energizes the blob
+// Pointer: parallax tilt + a "wake" that energizes the blob
 // ==================================================================
 const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
 let wake = 0;
