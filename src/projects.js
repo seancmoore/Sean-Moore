@@ -10,7 +10,7 @@ export const projects = [
     accent: "#38bdf8",
     links: [
       { label: "Play live", url: "https://eliteballknowledge.web.app" },
-      { label: "GitHub", url: "https://github.com/s3anzi3/ebk" },
+      { label: "GitHub", url: "https://github.com/seancmoore/ebk" },
     ],
   },
   {
@@ -22,7 +22,7 @@ export const projects = [
     accent: "#f59e0b",
     links: [
       { label: "Play live", url: "https://outside-the-box-game.web.app" },
-      { label: "GitHub", url: "https://github.com/s3anzi3/outside-the-box-game" },
+      { label: "GitHub", url: "https://github.com/seancmoore/outside-the-box-game" },
       { label: "Competition", url: "https://www3.cs.stonybrook.edu/~games/" },
     ],
   },
@@ -54,7 +54,7 @@ export const profile = {
     "I'm a small-business owner and self-taught developer. I run Edgeable and build web apps: games, data-driven tools, and Firebase-powered products, usually shipping the whole thing end to end, from data pipeline to deployed site.",
   email: "seanchristmoore@gmail.com",
   links: [
-    { label: "GitHub", url: "https://github.com/s3anzi3" },
+    { label: "GitHub", url: "https://github.com/seancmoore" },
     { label: "Email", url: "mailto:seanchristmoore@gmail.com" },
   ],
 };
