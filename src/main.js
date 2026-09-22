@@ -228,6 +228,8 @@ document.getElementById("about-text").innerHTML = profile.about.replace(
   /[removed]/g,
   "<b>[removed]</b>"
 );
+document.getElementById("work-intro").textContent = profile.workIntro || "";
+document.getElementById("contact-lead").textContent = profile.contactLead || "";
 
 const projectsEl = document.getElementById("projects");
 projects.forEach((p, i) => {
@@ -243,6 +245,26 @@ projects.forEach((p, i) => {
         .join("")
     : `<p class="project-note">${p.placeholder ? "Nothing to show here yet." : "Private project. Link available on request."}</p>`;
 
+  const metaHTML = p.meta && p.meta.length
+    ? `<p class="project-meta">${p.meta.map((m) => `<span>${m}</span>`).join("")}</p>`
+    : "";
+
+  const sectionsHTML = (p.sections || [])
+    .map((s) => {
+      const tags = (s.tags || []).map((t) => `<span>${t}</span>`).join("");
+      const links = (s.links || [])
+        .map((l) => `<a href="${l.url}" target="_blank" rel="noopener" class="ghost">${l.label}</a>`)
+        .join("");
+      return `
+        <div class="project-section">
+          <h4 class="project-section-head">${s.heading}</h4>
+          <p class="project-blurb">${s.text}</p>
+          ${tags ? `<div class="project-tags">${tags}</div>` : ""}
+          ${links ? `<div class="project-links">${links}</div>` : ""}
+        </div>`;
+    })
+    .join("");
+
   li.innerHTML = `
     <button class="project-head" aria-expanded="false">
       <span class="project-index">${String(i + 1).padStart(2, "0")}</span>
@@ -252,9 +274,11 @@ projects.forEach((p, i) => {
     </button>
     <div class="project-body">
       <div>
+        ${metaHTML}
         <p class="project-blurb">${p.blurb}</p>
         <div class="project-tags">${(p.tags || []).map((t) => `<span>${t}</span>`).join("")}</div>
         <div class="project-links">${linksHTML}</div>
+        ${sectionsHTML}
       </div>
     </div>`;
 
@@ -280,7 +304,11 @@ projects.forEach((p, i) => {
 
 const contactEl = document.getElementById("contact-links");
 contactEl.innerHTML = profile.links
-  .map((l) => `<a href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`)
+  .map((l) => {
+    const external = /^https?:/.test(l.url) || l.url.endsWith(".pdf");
+    const attrs = external ? ' target="_blank" rel="noopener"' : "";
+    return `<a href="${l.url}"${attrs}>${l.label}</a>`;
+  })
   .join("");
 
 // nav + brand scrolling

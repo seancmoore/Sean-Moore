@@ -1,33 +1,69 @@
-// Edit this file to add / change projects. Each project becomes a floating 3D card.
-// accent: drives the card's color glow. tags: short chips. links: appear in the detail panel.
+// Edit this file to add / change projects. Each project becomes a row in the Work accordion.
+//
+// Fields per project:
+//   title, subtitle   row header
+//   meta              short facts shown above the blurb: role, dates, status
+//   blurb             the story, one paragraph
+//   tags              short chips
+//   accent            the color the blob turns when the row is hovered
+//   links             buttons; the first one is solid, the rest are ghost
+//   sections          optional sub-blocks inside the row: { heading, text, tags, links }
+//   placeholder       true = "nothing to show" row
 export const projects = [
   {
     title: "[removed]",
-    subtitle: "Sports Prediction Market Service",
+    subtitle: "Subscription Sports Analytics",
+    meta: ["Founder", "December 2025 to present", "Live, 30+ subscribers"],
     blurb:
-      "[removed] is my sports prediction market service: I use data and modeling to find an edge in prediction markets, and subscribers get the picks. This portal is the self-serve side of the business. Subscribers log in to check their remaining subscription time; admins see every subscriber's status at a glance. Built on Firebase Auth, Firestore, and Hosting.",
-    tags: ["Firebase", "Auth", "Firestore"],
+      "[removed] is a subscription sports analytics service. I started it in December 2025 and launched it in May 2026. It now has 30+ paying subscribers at $30 a month. Each day I publish a card of picks with pricing and sizing guidance across the major US sports, and every pick is graded publicly as a win, loss, or push. Subscribers stay close through a private Telegram community. I directed AI coding agents to build the client portal end to end on Firebase: onboarding, subscription tracking, payment approval, and gated access to the community.",
+    tags: ["Firebase", "Firestore", "AI coding agents", "Product"],
     accent: "#a78bfa",
-    links: [{ label: "Visit live", url: "https://[removed].vip" }],
+    links: [
+      { label: "Visit live", url: "https://[removed].vip" },
+      { label: "Instagram", url: "https://www.instagram.com/_[removed]_/" },
+    ],
+    sections: [
+      {
+        heading: "Public record",
+        text:
+          "Every pick posts to a public record with a server-stamped time before the game starts, then gets graded in place. Grading is one-way and nothing can be deleted, so the record is tamper-evident by design. It shows the running win-loss-push record, net units, and return on investment for anyone to check.",
+        tags: ["Timestamped", "One-way grading", "Public"],
+        links: [{ label: "See the record", url: "https://[removed].vip/card" }],
+      },
+    ],
   },
   {
     title: "EBK",
     subtitle: "Elite Ball Knowledge",
+    meta: ["Solo build", "2026", "Live, six sports"],
     blurb:
-      "A multi-game NFL trivia hub built on ~39,000 player-seasons of nflverse data. Includes an endless Higher/Lower streak game plus Stat Line, Career Path, and an Immaculate-Grid clone. Mobile-first with glassmorphism UI and anime.js motion.",
-    tags: ["JavaScript", "Firebase", "Python", "Data"],
+      "A trivia platform covering six sports: the NFL, college football, the NBA, MLB, the NHL, and the Premier League. Each sport gets the same set of games, including a daily player grid, an endless higher/lower streak game, and head-to-head rooms. Accounts, leaderboards, and rarity scoring run on Firebase. Every game draws on real player-season stats from a data pipeline built per league, and the same data feeds the content pipeline below.",
+    tags: ["JavaScript", "Firebase", "Data"],
     accent: "#38bdf8",
     links: [
       { label: "Play live", url: "https://eliteballknowledge.web.app" },
       { label: "GitHub", url: "https://github.com/seancmoore/ebk" },
     ],
+    sections: [
+      {
+        heading: "Content pipeline",
+        text:
+          "EBK publishes its own content. The pipeline takes the game's data, like daily grid results and how often each player gets picked, and turns it into short-form video with headless Chromium and ffmpeg. Videos post automatically to Instagram and YouTube Shorts, and the YouTube channel is past 175 uploads. How each batch performs decides what goes into the next one.",
+        tags: ["Headless Chromium", "ffmpeg", "YouTube Shorts", "Instagram"],
+        links: [
+          { label: "Watch on YouTube", url: "https://www.youtube.com/channel/UCqfMhumbXkyvJACM_kr3KAQ" },
+          { label: "Instagram", url: "https://www.instagram.com/elite.ball.knowledge/" },
+        ],
+      },
+    ],
   },
   {
     title: "Outside-the-Box",
     subtitle: "Thinking Certification",
+    meta: ["Stony Brook", "2025 to 2026", "Competition finalist"],
     blurb:
-      "A 50-level assessment in which candidates earn a certificate that stamps their problem solving, lateral thinking, and decision making upon completion. A finalist in the 21st annual Stony Brook University Game Programming Competition.",
-    tags: ["TypeScript", "Canvas", "Assessment", "SBU finalist"],
+      "A browser puzzle game framed as a 50-question certification exam, with onboarding, timed sections, proctor feedback, and a certificate at the end. Every question punishes the obvious answer and rewards lateral thinking. It was a finalist in the Stony Brook Game Development Club's 21st Annual Game Development Competition, and all 50 levels are live.",
+    tags: ["HTML5 Canvas", "TypeScript", "Puzzle", "SBU finalist"],
     accent: "#f59e0b",
     links: [
       { label: "Play live", url: "https://outside-the-box-game.web.app" },
@@ -38,20 +74,37 @@ export const projects = [
   {
     title: "Brook Hill Events",
     subtitle: "Summer Program Events Platform",
+    meta: ["Program Activities Manager", "Summer 2026", "Live"],
     blurb:
-      "The events platform I built as Program Manager at The Brook Hill Alliance, a summer study-abroad program in NYC. As a coordinator I watched on-campus activities go under-attended: students had no single place to see what was happening or commit to showing up. When I moved up to manager I built one. Schedules and shareable flyers for 70+ sessions and excursions, roster-verified RSVPs, tournament team sign-ups, and a live staff dashboard. Technically simple on purpose; the win was engagement, and the program's on-campus activity reviews rose with it.",
+      "The Brook Hill Alliance runs a study-abroad program that brings about 1,500 students to St. John's University each summer. On-campus activities had low turnout because there was no single place to see what was on or commit to going. After I was promoted to Program Activities Manager, I built and launched one. It handles schedules and shareable flyers for 70+ sessions and excursions, roster-verified RSVPs, tournament registration, song requests, and a staff dashboard with live rosters. Attendance and activity reviews both went up.",
     tags: ["Firebase", "Firestore", "Cloud Functions", "Ops"],
     accent: "#C9A84C",
     links: [
       { label: "Visit live", url: "https://brookhill-events.web.app" },
       { label: "GitHub", url: "https://github.com/seancmoore/brookhill-events" },
     ],
+    sections: [
+      {
+        heading: "Disco nights",
+        text:
+          "The first piece was a song-request and RSVP app for the program's disco nights. Students check in against the roster once, then request songs and RSVP from their phone. The events hub grew out of it.",
+        tags: ["Roster check-in", "Song requests", "RSVP"],
+        links: [{ label: "Open the disco app", url: "https://brookhill-disco-2026.web.app" }],
+      },
+      {
+        heading: "Daily updates",
+        text:
+          "A scheduled AI agent reads the master calendar and program databases and publishes the site's daily updates on its own, which removed the manual publishing step for staff.",
+        tags: ["AI agent", "Automation"],
+        links: [],
+      },
+    ],
   },
   {
     title: "More soon",
     subtitle: "Work in progress",
     blurb:
-      "I'm always building. This slot is a placeholder for the next project. Check back, or reach out if you want to know what I'm working on right now.",
+      "This slot is a placeholder for the next project. Check back, or reach out if you want to know what I'm working on right now.",
     tags: ["Coming soon"],
     accent: "#34d399",
     links: [],
@@ -61,12 +114,15 @@ export const projects = [
 
 export const profile = {
   name: "Sean Moore",
-  tagline: "Developer & founder of [removed]",
+  tagline: "Founder of [removed]. Operations and product.",
   about:
-    "I'm a small-business owner and self-taught developer. I run [removed] and build web apps: games, data-driven tools, and Firebase-powered products, usually shipping the whole thing end to end, from data pipeline to deployed site.",
+    "I graduated from Stony Brook in 2026 with a CS degree. I spent four years in program operations for a summer program of about 1,500 students, finishing as Program Activities Manager over a team of 15. I also design, direct, and ship AI-built web products, including [removed], a paid sports analytics subscription with 30+ subscribers. I'm looking for an operations, program, or product role that needs both.",
+  workIntro: "Four shipped products, all live. Open a row for the story and the links.",
+  contactLead: "Based in New York. Open to operations, program, and product roles.",
   email: "seanchristmoore@gmail.com",
   links: [
     { label: "Email", url: "mailto:seanchristmoore@gmail.com" },
+    { label: "Resume", url: "/Sean_Moore_Resume.pdf" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/seanchristmoore" },
     { label: "GitHub", url: "https://github.com/seancmoore" },
   ],
