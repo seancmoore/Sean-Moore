@@ -1,45 +1,36 @@
-# Sean Moore 3D Portfolio
+# Sean Moore - Portfolio
 
-A single-page portfolio built with **Three.js + Vite**. The centerpiece is a custom
-GLSL shader blob: a noise-displaced sphere with recomputed normals and a fresnel rim
-light, which reacts to the mouse and shifts position/color/energy as you scroll through
-the Hero, About, Work, and Contact sections.
+My personal portfolio site, built with Three.js and Vite. The centerpiece is a custom shader blob - a noise-displaced sphere with recomputed normals and a fresnel rim light - that reacts to your mouse and shifts color, position and energy as you scroll through the page.
 
-## Run it
+## Running it
 
-```bash
-npm install      # first time only
-npm run dev      # open the printed localhost URL
+```
+npm install
+npm run dev
 ```
 
-## Build for production
+## Building
 
-```bash
-npm run build    # outputs to dist/
-npm run preview  # preview the production build locally
+```
+npm run build     # outputs to dist/
+npm run preview   # check the production build locally
 ```
 
 ## Editing content
 
-Everything you'd normally change lives in **`src/projects.js`**:
+Almost everything you'd want to change lives in `src/projects.js`:
 
-- `projects[]`: each entry becomes a row in the Work section. Fields: `title`, `subtitle`,
-  `blurb`, `tags`, `accent` (the color the blob turns when you hover the row), `links`,
-  `placeholder` (bool).
-- `profile`: your name, the About text, email, and the contact links.
+- `projects[]` - each entry is a row in the Work section: title, subtitle, blurb, tags, an accent color (what the blob turns when you hover the row), and links
+- `profile` - name, about text, email, contact links
 
-Add a project by appending another object to the `projects` array, and the accordion row and
-the blob's hover color adapt automatically.
+Add a new project by appending to the array - the layout and the blob's hover color adjust on their own.
 
-## Deploy to Firebase Hosting
+## Deploying
 
-1. Put your Firebase project ID in `.firebaserc` (the `"default"` value).
-2. Make sure you're logged in: `firebase login` (use `seanchristmoore@gmail.com`).
-3. Deploy:
+Set your Firebase project ID in `.firebaserc`, log in with `firebase login`, then:
 
-```bash
-npm run deploy   # runs vite build, then firebase deploy --only hosting
+```
+npm run deploy
 ```
 
-`firebase.json` already points Hosting at the `dist/` folder.
-```
+That runs the Vite build and deploys to Firebase Hosting.
