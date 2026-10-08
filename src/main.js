@@ -225,8 +225,8 @@ document.getElementById("brand-name").textContent = profile.name;
 document.getElementById("hero-name").textContent = profile.name;
 document.getElementById("hero-tag").textContent = profile.tagline;
 document.getElementById("about-text").innerHTML = profile.about.replace(
-  /[removed]/g,
-  "<b>[removed]</b>"
+  /EBK/g,
+  "<b>EBK</b>"
 );
 document.getElementById("work-intro").textContent = profile.workIntro || "";
 document.getElementById("contact-lead").textContent = profile.contactLead || "";

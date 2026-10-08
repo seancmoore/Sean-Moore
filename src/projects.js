@@ -11,28 +11,6 @@
 //   placeholder       true = "nothing to show" row
 export const projects = [
   {
-    title: "[removed]",
-    subtitle: "Subscription Sports Analytics",
-    meta: ["Founder", "December 2025 to present", "Live, 30+ subscribers"],
-    blurb:
-      "[removed] is a subscription sports analytics service. I started it in December 2025 and launched it in May 2026. It now has 30+ paying subscribers at $30 a month. Each day I publish a card of picks with pricing and sizing guidance across the major US sports, and every pick is graded publicly as a win, loss, or push. Subscribers stay close through a private Telegram community. I directed AI coding agents to build the client portal end to end on Firebase: onboarding, subscription tracking, payment approval, and gated access to the community.",
-    tags: ["Firebase", "Firestore", "AI coding agents", "Product"],
-    accent: "#a78bfa",
-    links: [
-      { label: "Visit live", url: "https://[removed].vip" },
-      { label: "Instagram", url: "https://www.instagram.com/_[removed]_/" },
-    ],
-    sections: [
-      {
-        heading: "Public record",
-        text:
-          "Every pick posts to a public record with a server-stamped time before the game starts, then gets graded in place. Grading is one-way and nothing can be deleted, so the record is tamper-evident by design. It shows the running win-loss-push record, net units, and return on investment for anyone to check.",
-        tags: ["Timestamped", "One-way grading", "Public"],
-        links: [{ label: "See the record", url: "https://[removed].vip/card" }],
-      },
-    ],
-  },
-  {
     title: "EBK",
     subtitle: "Elite Ball Knowledge",
     meta: ["Solo build", "2026", "Live, six sports"],
@@ -114,10 +92,10 @@ export const projects = [
 
 export const profile = {
   name: "Sean Moore",
-  tagline: "Founder of [removed]. Operations and product.",
+  tagline: "Operations and product.",
   about:
-    "I graduated from Stony Brook in 2026 with a CS degree. I spent four years in program operations for a summer program of about 1,500 students, finishing as Program Activities Manager over a team of 15. I also design, direct, and ship AI-built web products, including [removed], a paid sports analytics subscription with 30+ subscribers. I'm looking for an operations, program, or product role that needs both.",
-  workIntro: "Four shipped products, all live. Open a row for the story and the links.",
+    "I graduated from Stony Brook in 2026 with a CS degree. I spent four years in program operations for a summer program of about 1,500 students, finishing as Program Activities Manager over a team of 15. I also design, direct, and ship AI-built web products, including EBK, a six-sport trivia platform, and the events platform for that same program. I'm looking for an operations, program, or product role that needs both.",
+  workIntro: "Three shipped products, all live. Open a row for the story and the links.",
   contactLead: "Based in New York. Open to operations, program, and product roles.",
   email: "seanchristmoore@gmail.com",
   links: [
